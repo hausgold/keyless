@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:1337/rsa1.pub
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=600
+      Last-Modified:
+      - Thu, 23 Nov 2017 17:55:53 GMT
+      Etag:
+      - '"66307-6698834-1511459753756"'
+      Content-Type:
+      - application/x-mspublisher
+      Date:
+      - Thu, 23 Nov 2017 17:56:26 GMT
+      Connection:
+      - keep-alive
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        -----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzZTzx5kZ+QPtx1goTes6
+        7mrq72jWWBCNozPkIdhMLuUbNBU7qQeAlSrxv0c43YQ6AJgi+Yv7/gBZwtyCdMxS
+        SF6R5uSVItKcDM4jEFT0grFnV9BfSQhKEGPhTRkIp4V72ynqgFxANDYkZvgBPJd9
+        yMMnYHflBWsUQ94Gkid/pZ7yb8sLqMJo4cOusVGGb50ie1mDxv88rYY8hB3zDiw5
+        skwBYQaRUdJagSFrCsszM2aOuDJAGacnqhlWLtlyr+n+IUt1KhcopTSFOeRs8W5S
+        BM2StlDSU1LWsLck4WjkuM4vqprHMjLc8itRKsMxgaCDNXJyfCygjolu9oQfsEO6
+        awIDAQAB
+        -----END PUBLIC KEY-----
+    http_version: 
+  recorded_at: Thu, 23 Nov 2017 17:56:26 GMT
+recorded_with: VCR 3.0.3
