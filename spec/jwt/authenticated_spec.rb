@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Jwt::Authenticated do
+RSpec.describe Keyless do
   it 'has a version number' do
-    expect(Jwt::Authenticated::VERSION).not_to be nil
+    expect(Keyless::VERSION).not_to be nil
   end
 
   describe 'configuration' do

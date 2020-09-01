@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Jwt::Authenticated::RsaPublicKey do
+RSpec.describe Keyless::RsaPublicKey do
   # Use this method to swallow any raised exceptions. Just wrap any code you
   # want with this method.  This is useful in situations were you test some
   # behaviour in the middle of a raising call.
@@ -115,7 +115,7 @@ RSpec.describe Jwt::Authenticated::RsaPublicKey do
       it 'raises a FetchError when not successful', :vcr do
         instance.url = 'https://httpstat.us/502'
         expect { instance.fetch_encoded_key }.to \
-          raise_error(Jwt::Authenticated::RsaPublicKey::FetchError,
+          raise_error(Keyless::RsaPublicKey::FetchError,
                       /502 Bad Gateway/)
       end
     end
@@ -164,7 +164,7 @@ RSpec.describe Jwt::Authenticated::RsaPublicKey do
 
   describe '.fetch' do
     it 'just shortcuts the instance method' do
-      Jwt::Authenticated.configure do |conf|
+      Keyless.configure do |conf|
         conf.rsa_public_key_url = file_fixture('rsa1.pub').path
       end
       expect(described_class.fetch).to be_a(OpenSSL::PKey::RSA)

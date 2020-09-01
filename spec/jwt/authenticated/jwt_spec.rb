@@ -11,7 +11,7 @@ def new_signed_token(custom_private_key: nil, **payload)
   JWT.encode(payload.to_h, key, 'RS256')
 end
 
-RSpec.describe Jwt::Authenticated::Jwt do
+RSpec.describe Keyless::Jwt do
   let(:private_key) { OpenSSL::PKey::RSA.new(2048) }
   let(:public_key) { private_key.public_key }
   let(:unsigned_instance) { described_class.new(new_token(test: true)) }
@@ -41,7 +41,7 @@ RSpec.describe Jwt::Authenticated::Jwt do
 
   describe '#verification_key' do
     before do
-      key = Jwt::Authenticated::RsaPublicKey.instance
+      key = Keyless::RsaPublicKey.instance
       key.url = file_fixture('rsa1.pub').path
     end
 
@@ -158,7 +158,7 @@ RSpec.describe Jwt::Authenticated::Jwt do
     end
 
     def configure_valid
-      Jwt::Authenticated.configure do |conf|
+      Keyless.configure do |conf|
         conf.jwt_issuer = issuer
         conf.jwt_beholder = audience.first
         conf.jwt_verification_key = -> { public_key }

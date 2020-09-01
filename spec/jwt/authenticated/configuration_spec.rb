@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Jwt::Authenticated::Configuration do
+RSpec.describe Keyless::Configuration do
   let(:instance) { described_class.new }
 
   %w[authenticator

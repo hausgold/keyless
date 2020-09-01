@@ -1,8 +1,8 @@
-![jwt-authenticated](doc/assets/project.svg)
+![keyless](doc/assets/project.svg)
 
-[![Build Status](https://travis-ci.com/hausgold/jwt-authenticated.svg?branch=master)](https://travis-ci.com/hausgold/jwt-authenticated)
-[![Gem Version](https://badge.fury.io/rb/jwt-authenticated.svg)](https://badge.fury.io/rb/jwt-authenticated)
-[![API docs](https://img.shields.io/badge/docs-API-blue.svg)](https://www.rubydoc.info/gems/jwt-authenticated)
+[![Build Status](https://travis-ci.com/hausgold/keyless.svg?branch=master)](https://travis-ci.com/hausgold/keyless)
+[![Gem Version](https://badge.fury.io/rb/keyless.svg)](https://badge.fury.io/rb/keyless)
+[![API docs](https://img.shields.io/badge/docs-API-blue.svg)](https://www.rubydoc.info/gems/keyless)
 
 This gem is dedicated to easily integrate a JWT authentication to your
 ruby application. The real authentication
@@ -30,7 +30,7 @@ flexible on the JWT verification level.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jwt-authenticated'
+gem 'keyless'
 ```
 
 And then execute:
@@ -42,7 +42,7 @@ $ bundle
 Or install it yourself as:
 
 ```bash
-$ gem install jwt-authenticated
+$ gem install keyless
 ```
 
 ## Configuration
@@ -61,7 +61,7 @@ signing. The function must return true or false to indicate the validity of the
 token.
 
 ```ruby
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   conf.authenticator = proc do |token|
     # Verify the token the way you like. (true, false)
   end
@@ -81,18 +81,18 @@ have your own mechanism.
 
 ```ruby
 # Get your public key, by using the global configuration
-public_key = Jwt::Authenticated::RsaPublicKey.fetch
+public_key = Keyless::RsaPublicKey.fetch
 # => OpenSSL::PKey::RSA
 
 # Using a local configuration
-fetcher = Jwt::Authenticated::RsaPublicKey.instance
+fetcher = Keyless::RsaPublicKey.instance
 fetcher.url = 'https://your.identity.provider/rsa_public_key'
 public_key = fetcher.fetch
 # => OpenSSL::PKey::RSA
 ```
 
 The following examples show you how to configure the
-`Jwt::Authenticated::RsaPublicKey` class the global way. This is useful
+`Keyless::RsaPublicKey` class the global way. This is useful
 for a shared initializer place.
 
 #### RSA public key location (URL)
@@ -104,7 +104,7 @@ accordingly.  We allow the fetch of the public key from a remote server
 Specify the URL or the local path here. Not specified by default.
 
 ```ruby
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   # Local file
   conf.rsa_public_key_url = '/tmp/jwt_rsa.pub'
   # Remote URL
@@ -120,7 +120,7 @@ keep the traffic low to the resource server.  For a local file you can skip
 this. Disabled by default.
 
 ```ruby
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   conf.rsa_public_key_caching = true
 end
 ```
@@ -135,7 +135,7 @@ when you change keys. Your infrastructure could be inoperable for this
 configured time.  One hour by default.
 
 ```ruby
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   conf.rsa_public_key_expiration = 1.hour
 end
 ```
@@ -157,7 +157,7 @@ the `RsaPublicKey` fetcher class. (by default)
 raw_token = 'eyJ0eXAiOiJKV1QifQ.eyJ0ZXN0Ijp0cnVlfQ.'
 
 # Parse the raw token and create a instance of it
-token = Jwt::Authenticated::Jwt.new(raw_token)
+token = Keyless::Jwt.new(raw_token)
 
 # Access the payload easily (recursive-open-struct)
 token.payload.test
@@ -170,7 +170,7 @@ token.valid?
 ```
 
 The following examples show you how to configure the
-`Jwt::Authenticated::Jwt` class the global way. This is useful for a
+`Keyless::Jwt` class the global way. This is useful for a
 shared initializer place.
 
 #### Issuer verification
@@ -179,7 +179,7 @@ The JSON Web Token issuer which should be used for verification. When `nil` we
 also turn off the verification by default. (See the default JWT options)
 
 ```ruby
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   conf.jwt_issuer = 'your-identity-provider'
 end
 ```
@@ -191,7 +191,7 @@ which MUST be present on the JSON Web Token audience claim. When `nil` we
 also turn off the verification by default. (See the default JWT options)
 
 ```ruby
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   conf.jwt_beholder = 'your-resource-server'
 end
 ```
@@ -201,12 +201,12 @@ end
 You can configure a different JSON Web Token verification option hash if your
 algorithm differs or you want some extra/different options.  Just watch out
 that you have to pass a proc to this configuration property. On the
-`Jwt::Authenticated::Jwt` class it has to be a simple hash. The default
+`Keyless::Jwt` class it has to be a simple hash. The default
 is here the `RS256` algorithm with enabled expiration check, and issuer+audience
 check when the `jwt_issuer` / `jwt_beholder` are configured accordingly.
 
 ```ruby
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   conf.jwt_options = proc do
     # See: https://github.com/jwt/ruby-jwt
     { algorithm: 'HS256' }
@@ -219,11 +219,11 @@ end
 You can configure your own verification key on the `Jwt` wrapper class.  This
 way you can pass your HMAC secret or your ECDSA public key to the JSON Web
 Token validation method. Here you need to pass a proc, on the
-`Jwt::Authenticated::Jwt` class it has to be a scalar value. By default
+`Keyless::Jwt` class it has to be a scalar value. By default
 we use the `RsaPublicKey` class to retrieve the RSA public key.
 
 ```ruby
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   conf.jwt_verification_key = proc do
     # Retrieve your verification key (RSA, ECDSA, HMAC secret)
     # the way you like, and pass it back here.
@@ -239,7 +239,7 @@ verification.
 
 ```ruby
 # On an initializer ..
-Jwt::Authenticated.configure do |conf|
+Keyless.configure do |conf|
   # The remote RSA public key location and enabled caching to limit the
   # traffic on the remote server.
   conf.rsa_public_key_url = 'https://your.identity.provider/rsa_public_key'
@@ -253,7 +253,7 @@ Jwt::Authenticated.configure do |conf|
   # Custom verification logic.
   conf.authenticator = proc do |token|
     # Parse and instantiate a JWT verification instance
-    jwt = Jwt::Authenticated::Jwt.new(token)
+    jwt = Keyless::Jwt.new(token)
 
     # We just allow valid access tokens
     jwt.access_token? && jwt.valid?
@@ -276,4 +276,4 @@ git commits and tags, and push the `.gem` file to
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/hausgold/jwt-authenticated.
+https://github.com/hausgold/keyless.

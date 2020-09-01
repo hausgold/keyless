@@ -4,7 +4,7 @@ require 'simplecov'
 SimpleCov.command_name 'specs'
 
 require 'bundler/setup'
-require 'jwt/authenticated'
+require 'keyless'
 require 'timecop'
 require 'pp'
 

@@ -2,17 +2,17 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jwt/authenticated/version'
+require 'keyless/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'jwt-authenticated'
-  spec.version       = Jwt::Authenticated::VERSION
+  spec.name          = 'keyless'
+  spec.version       = Keyless::VERSION
   spec.authors       = ['Hermann Mayer', 'Christopher Mühl', 'Marcus Geißler']
   spec.email         = ['hermann.mayer92@gmail.com', 'christopher@padarom.xyz', 'mg@hausgold.de']
 
-  spec.summary       = 'A reusable JWT authentication concern'
-  spec.description   = 'A reusable JWT authentication concern'
-  spec.homepage      = 'https://github.com/hausgold/jwt-authenticated'
+  spec.summary       = 'A reusable JWT authentication helper'
+  spec.description   = 'A reusable JWT authentication helper'
+  spec.homepage      = 'https://github.com/hausgold/keyless'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
