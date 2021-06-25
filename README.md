@@ -1,6 +1,6 @@
 ![keyless](doc/assets/project.svg)
 
-[![Build Status](https://travis-ci.com/hausgold/keyless.svg?branch=master)](https://travis-ci.com/hausgold/keyless)
+[![Continuous Integration](https://github.com/hausgold/keyless/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/hausgold/keyless/actions/workflows/test.yml)
 [![Gem Version](https://badge.fury.io/rb/keyless.svg)](https://badge.fury.io/rb/keyless)
 [![API docs](https://img.shields.io/badge/docs-API-blue.svg)](https://www.rubydoc.info/gems/keyless)
 
