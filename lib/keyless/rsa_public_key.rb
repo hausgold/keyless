@@ -65,7 +65,8 @@ module Keyless
 
       if remote?
         res = HTTParty.get(url)
-        raise FetchError, res.inspect unless (200..299).include? res.code
+        raise FetchError, res.inspect unless (200..299).cover? res.code
+
         res.body
       else
         File.read(url)

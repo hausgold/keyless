@@ -2,9 +2,9 @@
 
 [![Continuous Integration](https://github.com/hausgold/keyless/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/hausgold/keyless/actions/workflows/test.yml)
 [![Gem Version](https://badge.fury.io/rb/keyless.svg)](https://badge.fury.io/rb/keyless)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d1bda659e11276f7ec06/maintainability)](https://codeclimate.com/github/hausgold/keyless/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/d1bda659e11276f7ec06/test_coverage)](https://codeclimate.com/github/hausgold/keyless/test_coverage)
-[![API docs](https://img.shields.io/badge/docs-API-blue.svg)](https://www.rubydoc.info/gems/keyless)
+[![Test Coverage](https://automate-api.hausgold.de/v1/coverage_reports/keyless/coverage.svg)](https://knowledge.hausgold.de/coverage)
+[![Test Ratio](https://automate-api.hausgold.de/v1/coverage_reports/keyless/ratio.svg)](https://knowledge.hausgold.de/coverage)
+[![API docs](https://automate-api.hausgold.de/v1/coverage_reports/keyless/documentation.svg)](https://www.rubydoc.info/gems/keyless)
 
 This gem is dedicated to easily integrate a JWT authentication to your
 ruby application. The real authentication
