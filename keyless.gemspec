@@ -5,39 +5,55 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'keyless/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'keyless'
-  spec.version       = Keyless::VERSION
-  spec.authors       = ['Hermann Mayer', 'Christopher Mühl', 'Marcus Geißler']
-  spec.email         = ['hermann.mayer92@gmail.com',
-                        'christopher@padarom.xyz',
-                        'mg@hausgold.de']
+  spec.name = 'keyless'
+  spec.version = Keyless::VERSION
+  spec.authors = ['Hermann Mayer', 'Christopher Mühl', 'Marcus Geißler']
+  spec.email = ['hermann.mayer92@gmail.com',
+                'christopher@padarom.xyz',
+                'marcus3006@gmail.com']
 
-  spec.summary       = 'A reusable JWT authentication helper'
-  spec.description   = 'A reusable JWT authentication helper'
-  spec.homepage      = 'https://github.com/hausgold/keyless'
+  spec.license = 'MIT'
+  spec.summary = 'A reusable JWT authentication helper'
+  spec.description = 'A reusable JWT authentication helper'
+
+  base_uri = "https://github.com/hausgold/#{spec.name}"
+  spec.metadata = {
+    'homepage_uri' => base_uri,
+    'source_code_uri' => base_uri,
+    'changelog_uri' => "#{base_uri}/blob/master/CHANGELOG.md",
+    'bug_tracker_uri' => "#{base_uri}/issues",
+    'documentation_uri' => "https://www.rubydoc.info/gems/#{spec.name}"
+  }
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+
+  spec.bindir = 'exe'
+  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'activesupport', '>= 3.2.0'
-  spec.add_runtime_dependency 'httparty'
-  spec.add_runtime_dependency 'jwt', '~> 2.1'
-  spec.add_runtime_dependency 'recursive-open-struct', '~> 1.0'
+  spec.required_ruby_version = '>= 2.5'
 
-  spec.add_development_dependency 'bundler', '>= 1.16', '< 3'
-  spec.add_development_dependency 'railties', '>= 4.2.0', '< 6.1'
-  spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop', '~> 0.63.1'
-  spec.add_development_dependency 'rubocop-rspec', '~> 1.31'
-  spec.add_development_dependency 'simplecov', '< 0.18'
-  spec.add_development_dependency 'timecop', '~> 0.9.1'
-  spec.add_development_dependency 'vcr', '~> 3.0'
-  spec.add_development_dependency 'webmock', '~> 3.1'
-  spec.add_development_dependency 'yard', '~> 0.9.18'
-  spec.add_development_dependency 'yard-activesupport-concern', '~> 0.0.1'
+  spec.add_runtime_dependency 'activesupport', '>= 5.2'
+  spec.add_runtime_dependency 'httparty', '>= 0.21'
+  spec.add_runtime_dependency 'jwt', '~> 2.6'
+  spec.add_runtime_dependency 'recursive-open-struct', '~> 1.1'
+
+  spec.add_development_dependency 'appraisal', '~> 2.4'
+  spec.add_development_dependency 'bundler', '~> 2.3'
+  spec.add_development_dependency 'countless', '~> 1.1'
+  spec.add_development_dependency 'guard-rspec', '~> 4.7'
+  spec.add_development_dependency 'railties', '>= 5.2'
+  spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'rspec', '~> 3.12'
+  spec.add_development_dependency 'rubocop', '~> 1.28'
+  spec.add_development_dependency 'rubocop-rails', '~> 2.14'
+  spec.add_development_dependency 'rubocop-rspec', '~> 2.10'
+  spec.add_development_dependency 'simplecov', '>= 0.22'
+  spec.add_development_dependency 'timecop', '>= 0.9.6'
+  spec.add_development_dependency 'vcr', '~> 6.0'
+  spec.add_development_dependency 'webmock', '~> 3.18'
+  spec.add_development_dependency 'yard', '>= 0.9.28'
+  spec.add_development_dependency 'yard-activesupport-concern', '>= 0.0.1'
 end

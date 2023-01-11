@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe Keyless::RsaPublicKey do
   # Use this method to swallow any raised exceptions. Just wrap any code you
   # want with this method.  This is useful in situations were you test some
