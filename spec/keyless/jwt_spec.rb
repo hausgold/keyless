@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 def new_token(**payload)
   encoded_header = Base64.urlsafe_encode64({ typ: 'JWT' }.to_json)
   encoded_payload = Base64.urlsafe_encode64(payload.to_json)

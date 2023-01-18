@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe Keyless do
   it 'has a version number' do
-    expect(Keyless::VERSION).not_to be nil
+    expect(Keyless::VERSION).not_to be_nil
   end
 
   describe 'configuration' do

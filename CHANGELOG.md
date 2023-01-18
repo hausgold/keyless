@@ -1,3 +1,11 @@
+### next
+
+* Bundler >= 2.3 is from now on required as minimal version (#1)
+* Dropped support for Ruby < 2.5 (#1)
+* Dropped support for Rails < 5.2 (#1)
+* Updated all development/runtime gems to their latest
+  Ruby 2.5 compatible version (#1)
+
 ### 1.0.2
 
 * Migrated to Github Actions
@@ -10,5 +18,6 @@
 
 ### 1.0.0
 
-* Initial release, extracted from former [grape-jwt-authentication](https://github.com/hausgold/grape-jwt-authentication)
-code at v1.3.0.
+* Initial release, extracted from former
+  [grape-jwt-authentication](https://github.com/hausgold/grape-jwt-authentication)
+  code at v1.3.0.
