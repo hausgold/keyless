@@ -132,10 +132,8 @@ RSpec.describe Keyless::RsaPublicKey do
   end
 
   describe '#fetch' do
-    let(:pub1) { file_fixture('rsa1.pub') }
-    let(:pub2) { file_fixture('rsa2.pub') }
-    let(:configure_pub1) { instance.url = pub1.path }
-    let(:configure_pub2) { instance.url = pub2.path }
+    let(:configure_pub_old) { instance.url = file_fixture('rsa1.pub').path }
+    let(:configure_pub_new) { instance.url = file_fixture('rsa2.pub').path }
 
     context 'with cache' do
       before do
@@ -144,8 +142,8 @@ RSpec.describe Keyless::RsaPublicKey do
       end
 
       it 'cache the key' do
-        configure_pub1
-        expect { configure_pub2 }.not_to change { instance.fetch.to_s }
+        configure_pub_old
+        expect { configure_pub_new }.not_to change { instance.fetch.to_s }
       end
 
       it 'caches nothing on issues', :vcr do
@@ -158,8 +156,8 @@ RSpec.describe Keyless::RsaPublicKey do
     context 'without cache' do
       it 'does not cache the key' do
         instance.caching = false
-        configure_pub1
-        expect { configure_pub2 }.to change { instance.fetch.to_s }
+        configure_pub_old
+        expect { configure_pub_new }.to change { instance.fetch.to_s }
       end
     end
   end
