@@ -32,7 +32,7 @@ RSpec.describe Keyless::Jwt do
 
     it 'makes the original token available' do
       expect(described_class.new(new_token).token).to \
-        be_eql(new_token)
+        eql(new_token)
     end
 
     it 'makes the payload available' do
@@ -58,7 +58,7 @@ RSpec.describe Keyless::Jwt do
     it 'can be reconfigured' do
       key = OpenSSL::PKey::RSA.new(2048).public_key
       unsigned_instance.verification_key = key
-      expect(unsigned_instance.verification_key.to_s).to be_eql(key.to_s)
+      expect(unsigned_instance.verification_key.to_s).to eql(key.to_s)
     end
   end
 
@@ -131,7 +131,7 @@ RSpec.describe Keyless::Jwt do
       at = 1.hour.from_now.change(usec: 0)
       jwt = new_token(exp: at.to_i)
       expect(described_class.new(jwt).expires_at).to \
-        be_eql(at)
+        eql(at)
     end
   end
 

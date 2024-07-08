@@ -43,7 +43,7 @@ RSpec.describe Keyless::RsaPublicKey do
 
     it 'can be reconfigured' do
       instance.url = '/tmp/file'
-      expect(instance.url).to be_eql('/tmp/file')
+      expect(instance.url).to eql('/tmp/file')
     end
   end
 
@@ -60,12 +60,12 @@ RSpec.describe Keyless::RsaPublicKey do
 
   describe '#expiration' do
     it 'delivers the default value' do
-      expect(instance.expiration).to be_eql(1.hour)
+      expect(instance.expiration).to eql(1.hour)
     end
 
     it 'can be reconfigured' do
       instance.expiration = 2.minutes
-      expect(instance.expiration).to be_eql(2.minutes)
+      expect(instance.expiration).to eql(2.minutes)
     end
   end
 
@@ -111,7 +111,7 @@ RSpec.describe Keyless::RsaPublicKey do
       it 'performs a HTTP GET request to get the public key', :vcr do
         instance.url = 'http://localhost:1337/rsa1.pub'
         expect(instance.fetch_encoded_key).to \
-          be_eql(file_fixture('rsa1.pub').read)
+          eql(file_fixture('rsa1.pub').read)
       end
 
       it 'raises a FetchError when not successful', :vcr do
@@ -126,7 +126,7 @@ RSpec.describe Keyless::RsaPublicKey do
       it 'performs a local file read to get the public key' do
         fixture = file_fixture('rsa1.pub')
         instance.url = fixture.path
-        expect(instance.fetch_encoded_key).to be_eql(fixture.read)
+        expect(instance.fetch_encoded_key).to eql(fixture.read)
       end
     end
   end
