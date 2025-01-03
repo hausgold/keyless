@@ -144,17 +144,17 @@ RSpec.describe Keyless::Jwt do
         exp: 1.hour.from_now.to_i,
         aud: audience }
     end
-    let(:valid) { new_signed_token(payload) }
-    let(:wrong_issuer) { new_signed_token(payload.merge(iss: 'wrong')) }
-    let(:expired) { new_signed_token(payload.merge(exp: 1.week.ago.to_i)) }
-    let(:wrong_audience) { new_signed_token(payload.merge(aud: 'wrong')) }
-    let(:missing_issued_at) { new_signed_token(payload.merge(iat: nil)) }
+    let(:valid) { new_signed_token(**payload) }
+    let(:wrong_issuer) { new_signed_token(**payload, iss: 'wrong') }
+    let(:expired) { new_signed_token(**payload, exp: 1.week.ago.to_i) }
+    let(:wrong_audience) { new_signed_token(**payload, aud: 'wrong') }
+    let(:missing_issued_at) { new_signed_token(**payload, iat: nil) }
     let(:invalid_sign) do
       key = OpenSSL::PKey::RSA.new(2048)
       new_signed_token(custom_private_key: key, **payload)
     end
     let(:manipulated_payload) do
-      parts = new_signed_token(payload).split('.')
+      parts = new_signed_token(**payload).split('.')
       new_payload = Base64.urlsafe_encode64({ test: true }.to_json)
       "#{parts.first}.#{new_payload}.#{parts.last}"
     end
@@ -189,7 +189,7 @@ RSpec.describe Keyless::Jwt do
     end
 
     it 'detects valid tokens' do
-      token = described_class.new(new_signed_token(payload))
+      token = described_class.new(new_signed_token(**payload))
       configure_valid
       expect(token.valid?).to be(true)
     end
