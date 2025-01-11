@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require 'singleton'
-require 'openssl'
-require 'httparty'
-
 module Keyless
   # A common purpose RSA public key fetching/caching helper. With the help
   # of this class you are able to retrieve the RSA public key from a remote

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'zeitwerk'
 require 'active_support'
 require 'active_support/concern'
 require 'active_support/configurable'
@@ -8,38 +9,48 @@ require 'active_support/core_ext/hash'
 require 'active_support/time'
 require 'active_support/time_with_zone'
 require 'jwt'
-require 'keyless/version'
-require 'keyless/configuration'
-require 'keyless/jwt'
-require 'keyless/rsa_public_key'
+require 'recursive-open-struct'
+require 'singleton'
+require 'openssl'
+require 'httparty'
 
 # The JWT authentication concern.
 module Keyless
-  extend ActiveSupport::Concern
+  # Setup a Zeitwerk autoloader instance and configure it
+  loader = Zeitwerk::Loader.for_gem
+
+  # Finish the auto loader configuration
+  loader.setup
+
+  # Load standalone code
+  require 'keyless/version'
+
+  # Make sure to eager load all SDK constants
+  loader.eager_load
 
   class << self
     attr_writer :configuration
-  end
 
-  # Retrieve the current configuration object.
-  #
-  # @return [Configuration]
-  def self.configuration
-    @configuration ||= Configuration.new
-  end
+    # Retrieve the current configuration object.
+    #
+    # @return [Configuration]
+    def configuration
+      @configuration ||= Configuration.new
+    end
 
-  # Configure the concern by providing a block which takes
-  # care of this task. Example:
-  #
-  #   Keyless.configure do |conf|
-  #     # conf.xyz = [..]
-  #   end
-  def self.configure
-    yield(configuration)
-  end
+    # Configure the concern by providing a block which takes
+    # care of this task. Example:
+    #
+    #   Keyless.configure do |conf|
+    #     # conf.xyz = [..]
+    #   end
+    def configure
+      yield(configuration)
+    end
 
-  # Reset the current configuration with the default one.
-  def self.reset_configuration!
-    self.configuration = Configuration.new
+    # Reset the current configuration with the default one.
+    def reset_configuration!
+      self.configuration = Configuration.new
+    end
   end
 end
