@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'recursive-open-struct'
-
 module Keyless
   # A easy to use model for verification of JSON Web Tokens. This is just a
   # wrapper class for the excellent ruby-jwt gem. It's completely up to you
