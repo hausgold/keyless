@@ -25,7 +25,7 @@ module Keyless
   # Load standalone code
   require 'keyless/version'
 
-  # Make sure to eager load all SDK constants
+  # Make sure to eager load all constants
   loader.eager_load
 
   class << self
