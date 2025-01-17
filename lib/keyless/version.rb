@@ -3,7 +3,7 @@
 # The gem version details.
 module Keyless
   # The version of the +keyless+ gem
-  VERSION = '1.6.0'
+  VERSION = '1.6.1'
 
   class << self
     # Returns the version of gem as a string.
