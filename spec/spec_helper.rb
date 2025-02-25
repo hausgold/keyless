@@ -8,8 +8,8 @@ require 'keyless'
 require 'timecop'
 
 # Setup a default timezone for the tests
-# rubocop:disable Rails/TimeZoneAssignment because we need a configured
-#   time zone for +Time.zone.xxx+ calls
+# rubocop:disable Rails/TimeZoneAssignment -- because we need a configured time
+#   zone for +Time.zone.xxx+ calls
 Time.zone = 'Europe/Berlin'
 # rubocop:enable Rails/TimeZoneAssignment
 
