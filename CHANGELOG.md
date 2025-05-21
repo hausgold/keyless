@@ -1,7 +1,11 @@
 ### next
 
-* Corrected some RuboCop glitches (#10)
-* Upgraded the rubocop dependencies (#11)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 1.7.1 (21 May 2025)
+
+* Corrected some RuboCop glitches ([#10](https://github.com/hausgold/keyless/pull/10))
+* Upgraded the rubocop dependencies ([#11](https://github.com/hausgold/keyless/pull/11))
 
 ### 1.7.0 (30 January 2025)
 
