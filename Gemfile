@@ -9,10 +9,10 @@ gemspec
 
 # Development dependencies
 gem 'appraisal', '~> 2.4'
-gem 'bundler', '~> 2.3'
+gem 'bundler', '~> 2.6'
 gem 'countless', '~> 1.1'
 gem 'guard-rspec', '~> 4.7'
-gem 'railties', '>= 6.1'
+gem 'railties', '>= 7.1'
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.12'
 gem 'rubocop'
