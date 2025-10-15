@@ -20,8 +20,6 @@ module Keyless
       ::JWT::InvalidPayload
     ].freeze
 
-    # :reek:Attribute because its fine to be extern-modifiable at these
-    # instances
     attr_reader :payload, :token
     attr_writer :verification_key, :jwt_options
     attr_accessor :issuer, :beholder
@@ -95,9 +93,6 @@ module Keyless
     # JWT string representation and check this.
     #
     # @return [Boolean] Whenever the token is valid or not
-    #
-    # :reek:NilCheck because we have to check the token
-    #                origin and react on it
     def valid?
       JWT.decode(token, verification_key, true, jwt_options) && true
     rescue *RESCUE_JWT_EXCEPTIONS
