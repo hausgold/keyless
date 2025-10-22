@@ -1,5 +1,6 @@
 ### next
 
+* Added support for Rails 8.1 (#15)
 * Dropped Reek (#14)
 
 ### 2.0.0 (28 June 2025)
