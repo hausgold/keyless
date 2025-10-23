@@ -1,9 +1,13 @@
 ### next
 
-* Dropped Reek (#14)
-* Added support for Rails 8.1 (#15)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.1.0 (23 October 2025)
+
+* Dropped Reek ([#14](https://github.com/hausgold/keyless/pull/14))
+* Added support for Rails 8.1 ([#15](https://github.com/hausgold/keyless/pull/15))
 * Switched from `ActiveSupport::Configurable` to a custom implementation based
-  on `ActiveSupport::OrderedOptions` (#16)
+  on `ActiveSupport::OrderedOptions` ([#16](https://github.com/hausgold/keyless/pull/16))
 
 ### 2.0.0 (28 June 2025)
 
