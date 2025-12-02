@@ -1,6 +1,8 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Loosend up the version requirement for the `jwt` gem to `>= 2.6`, so people
+  can [migrate to
+  3.0+](https://github.com/jwt/ruby-jwt/blob/v3.1.2/UPGRADING.md) (#17)
 
 ### 2.1.0 (23 October 2025)
 
