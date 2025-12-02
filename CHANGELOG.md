@@ -1,8 +1,12 @@
 ### next
 
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.2.0 (2 December 2025)
+
 * Loosend up the version requirement for the `jwt` gem to `>= 2.6`, so people
   can [migrate to
-  3.0+](https://github.com/jwt/ruby-jwt/blob/v3.1.2/UPGRADING.md) (#17)
+  3.0+](https://github.com/jwt/ruby-jwt/blob/v3.1.2/UPGRADING.md) ([#17](https://github.com/hausgold/keyless/pull/17))
 
 ### 2.1.0 (23 October 2025)
 
