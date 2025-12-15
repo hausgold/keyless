@@ -2,45 +2,152 @@
 http_interactions:
 - request:
     method: get
-    uri: https://httpstat.us/502
+    uri: https://httpco.de/502
     body:
-      encoding: US-ASCII
+      encoding: ASCII-8BIT
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      Connection:
+      - close
+      Host:
+      - httpco.de
       User-Agent:
-      - Ruby
+      - http.rb/5.3.1
   response:
     status:
       code: 502
       message: Bad Gateway
     headers:
-      Cache-Control:
-      - private
-      Content-Length:
-      - '15'
+      Date:
+      - Mon, 15 Dec 2025 15:17:43 GMT
       Content-Type:
       - text/plain; charset=utf-8
-      Server:
-      - Microsoft-IIS/10.0
-      X-Aspnetmvc-Version:
-      - '5.1'
-      Access-Control-Allow-Origin:
-      - "*"
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Powered-By:
-      - ASP.NET
-      Set-Cookie:
-      - ARRAffinity=d28d08589b40450da29f4b2b440a8999dc4a99e3f16179b8cb4261db712aed16;Path=/;HttpOnly;Domain=httpstat.us
-      Date:
-      - Thu, 14 Feb 2019 11:05:31 GMT
+      Content-Length:
+      - '11'
+      Connection:
+      - close
     body:
       encoding: UTF-8
-      string: 502 Bad Gateway
-    http_version: 
-  recorded_at: Thu, 14 Feb 2019 11:05:32 GMT
-recorded_with: VCR 3.0.3
+      string: Bad Gateway
+  recorded_at: Mon, 15 Dec 2025 15:17:43 GMT
+- request:
+    method: get
+    uri: https://httpco.de/502
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - httpco.de
+      User-Agent:
+      - http.rb/5.3.1
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Date:
+      - Mon, 15 Dec 2025 15:17:43 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '11'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: Bad Gateway
+  recorded_at: Mon, 15 Dec 2025 15:17:43 GMT
+- request:
+    method: get
+    uri: https://httpco.de/502
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - httpco.de
+      User-Agent:
+      - http.rb/5.3.1
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Date:
+      - Mon, 15 Dec 2025 15:17:44 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '11'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: Bad Gateway
+  recorded_at: Mon, 15 Dec 2025 15:17:44 GMT
+- request:
+    method: get
+    uri: https://httpco.de/502
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - httpco.de
+      User-Agent:
+      - http.rb/5.3.1
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Date:
+      - Mon, 15 Dec 2025 15:17:45 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '11'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: Bad Gateway
+  recorded_at: Mon, 15 Dec 2025 15:17:45 GMT
+- request:
+    method: get
+    uri: https://httpco.de/502
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - httpco.de
+      User-Agent:
+      - http.rb/5.3.1
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Date:
+      - Mon, 15 Dec 2025 15:17:46 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '11'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: Bad Gateway
+  recorded_at: Mon, 15 Dec 2025 15:17:46 GMT
+recorded_with: VCR 6.3.1
