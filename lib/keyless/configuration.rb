@@ -64,6 +64,10 @@ module Keyless
     # here.
     config_accessor(:rsa_public_key_url) { nil }
 
+    # When the remote (HTTP/HTTPS) fetching failed, how many times to retry the
+    # operation.
+    config_accessor(:rsa_public_key_fetch_retries) { 5 }
+
     # You can preconfigure the {RsaPublickey} class to enable/disable
     # caching. For a remote public key location it is handy to cache the
     # result for some time to keep the traffic low to this resource server.

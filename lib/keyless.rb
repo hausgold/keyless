@@ -14,7 +14,8 @@ require 'jwt'
 require 'recursive-open-struct'
 require 'singleton'
 require 'openssl'
-require 'httparty'
+require 'http'
+require 'retries'
 
 # The JWT authentication concern.
 module Keyless

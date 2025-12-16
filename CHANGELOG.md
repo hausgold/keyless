@@ -1,6 +1,7 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Switched from `httparty` to the `http` gem and added support for retries on
+  the RSA remote fetching (5 times by default) (#18)
 
 ### 2.2.0 (2 December 2025)
 

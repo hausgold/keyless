@@ -59,13 +59,20 @@ module Keyless
     def fetch_encoded_key
       raise ArgumentError, 'No URL for RsaPublicKey configured' unless url
 
-      if remote?
-        res = HTTParty.get(url)
-        raise FetchError, res.inspect unless (200..299).cover? res.code
+      remote? ? fetch_encoded_key_via_http : File.read(url)
+    end
 
-        res.body
-      else
-        File.read(url)
+    # Fetch the encoded (DER, or PEM) public key from a remote location via
+    # HTTP/HTTPS.
+    #
+    # @return [String] The encoded public key
+    def fetch_encoded_key_via_http
+      conf = ::Keyless.configuration
+      with_retries(max_tries: conf.rsa_public_key_fetch_retries) do
+        res = HTTP.get(url)
+        raise FetchError, res.inspect unless res.status.success?
+
+        res.to_s
       end
     end
 

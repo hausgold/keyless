@@ -115,7 +115,7 @@ RSpec.describe Keyless::RsaPublicKey do
       end
 
       it 'raises a FetchError when not successful', :vcr do
-        instance.url = 'https://httpstat.us/502'
+        instance.url = 'https://httpco.de/502'
         expect { instance.fetch_encoded_key }.to \
           raise_error(Keyless::RsaPublicKey::FetchError,
                       /502 Bad Gateway/)
