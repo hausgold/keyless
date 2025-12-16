@@ -1,7 +1,11 @@
 ### next
 
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.3.0 (16 December 2025)
+
 * Switched from `httparty` to the `http` gem and added support for retries on
-  the RSA remote fetching (5 times by default) (#18)
+  the RSA remote fetching (5 times by default) ([#18](https://github.com/hausgold/keyless/pull/18))
 
 ### 2.2.0 (2 December 2025)
 
