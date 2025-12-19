@@ -51,7 +51,7 @@ module Keyless
       payload.typ == 'refresh'
     end
 
-    # Retrives the expiration date from the payload when set.
+    # Retrieves the expiration date from the payload when set.
     #
     # @return [nil|ActiveSupport::TimeWithZone] The expiration date
     def expires_at
