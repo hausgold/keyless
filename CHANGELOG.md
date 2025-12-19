@@ -1,6 +1,10 @@
 ### next
 
-* Migrated to a shared Rubocop configuration for HAUSGOLD gems (#19)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.4.0 (19 December 2025)
+
+* Migrated to a shared Rubocop configuration for HAUSGOLD gems ([#19](https://github.com/hausgold/keyless/pull/19))
 
 ### 2.3.0 (16 December 2025)
 
