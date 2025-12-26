@@ -1,7 +1,11 @@
 ### next
 
-* Added Ruby 4.0 support (#21)
-* Dropped Ruby 3.2 and Rails 7.1 support (#20)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.5.0 (26 December 2025)
+
+* Added Ruby 4.0 support ([#21](https://github.com/hausgold/keyless/pull/21))
+* Dropped Ruby 3.2 and Rails 7.1 support ([#20](https://github.com/hausgold/keyless/pull/20))
 
 ### 2.4.0 (19 December 2025)
 
