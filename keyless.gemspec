@@ -33,9 +33,9 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 3.2'
+  spec.required_ruby_version = '>= 3.3'
 
-  spec.add_dependency 'activesupport', '>= 7.1'
+  spec.add_dependency 'activesupport', '>= 7.2'
   spec.add_dependency 'http', '~> 5.3'
   spec.add_dependency 'jwt', '>= 2.6'
   spec.add_dependency 'mutex_m', '>= 0.3'
