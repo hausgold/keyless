@@ -2,6 +2,10 @@
 
 * TODO: Replace this bullet point with an actual description of a change.
 
+### 2.7.0 (19 January 2026)
+
+* TODO: Replace this bullet point with an actual description of a change.
+
 ### 2.6.0 (7 January 2026)
 
 * Upgraded to Ubuntu 24.04 on Github Actions ([#23](https://github.com/hausgold/keyless/pull/23))
