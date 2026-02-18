@@ -1,7 +1,11 @@
 ### next
 
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.9.0 (18 February 2026)
+
 * Dropped 3rd-level gem dependencies which are not directly used
-  by this gem (#25)
+  by this gem ([#25](https://github.com/hausgold/keyless/pull/25))
 
 ### 2.8.0 (28 January 2026)
 
