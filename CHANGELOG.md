@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Dropped Ruby 3.x and Rails <8.1 support (#26)
 
 ### 2.9.0 (18 February 2026)
 
