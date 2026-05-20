@@ -1,6 +1,10 @@
 ### next
 
-* Corrected some RuboCop glitches (#27)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.11.0 (20 May 2026)
+
+* Corrected some RuboCop glitches ([#27](https://github.com/hausgold/keyless/pull/27))
 
 ### 2.10.0 (4 May 2026)
 
