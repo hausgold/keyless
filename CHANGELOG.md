@@ -1,6 +1,10 @@
 ### next
 
-* Upgraded the http gem to 6.0 (#28)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.12.0 (16 September 2026)
+
+* Upgraded the http gem to 6.0 ([#28](https://github.com/hausgold/keyless/pull/28))
 
 ### 2.11.0 (20 May 2026)
 
