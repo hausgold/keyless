@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 4.0'
 
   spec.add_dependency 'activesupport', '>= 8.1'
-  spec.add_dependency 'http', '~> 5.3'
+  spec.add_dependency 'http', '~> 6.0'
   spec.add_dependency 'jwt', '>= 2.6'
   spec.add_dependency 'logger', '~> 1.7'
   spec.add_dependency 'recursive-open-struct', '~> 2.0'

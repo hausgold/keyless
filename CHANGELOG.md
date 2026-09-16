@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Upgraded the http gem to 6.0 (#28)
 
 ### 2.11.0 (20 May 2026)
 
