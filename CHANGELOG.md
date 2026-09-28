@@ -1,6 +1,10 @@
 ### next
 
-* Upgraded the simplecov gem to 1.3 (#29)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.13.0 (28 September 2026)
+
+* Upgraded the simplecov gem to 1.3 ([#29](https://github.com/hausgold/keyless/pull/29))
 
 ### 2.12.0 (16 September 2026)
 
